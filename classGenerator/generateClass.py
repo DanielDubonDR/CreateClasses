@@ -1,6 +1,6 @@
-from os import path
+import os
 
-ruta = "{}{}".format(path.abspath(path.dirname(__file__)), '\\')
+ruta = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')+"\\"
 
 def createClass(nombreArchivo="newClass", nombreClase="NombreClase", variables="variable", GettersAndSetters=False, direccion=None):
     atributos = variables.replace(" ","").split(",")
@@ -32,6 +32,9 @@ def createClass(nombreArchivo="newClass", nombreClase="NombreClase", variables="
 
     if direccion==None:
         direccion=ruta+str(nombreArchivo)+'.py'
+        print("> Se creo el archivo en:", direccion)
+    else:
+        direccion=direccion+"\\"+str(nombreArchivo)+'.py'
         print("> Se creo el archivo en:", direccion)
     archivo = open(direccion, "a")
     archivo.write(string)
