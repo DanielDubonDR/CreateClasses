@@ -1,12 +1,15 @@
 from setuptools import setup, find_packages
 
+readme = open("./README.md", "r")
+
 setup(
     name='classGenerator',
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     packages=find_packages(),
     description='Generador de clases en python',
-    long_description=open('README.md').read(),
+    long_description=readme.read(),
+    long_description_content_type='text/markdown',
     author='Daniel Dubon Rodriguez',
     author_email='danieldubon499@gmail.com',
     url='https://github.com/DanielDubonDR/CreateClasses.git',
